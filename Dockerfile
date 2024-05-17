@@ -13,6 +13,15 @@ RUN poetry config virtualenvs.create false && poetry install
 #RUN pip install -r requirements.txt
 COPY . /code/
 
+# Make the entrypoint script executable
+RUN echo ls -l /code/entrypoint.sh
+RUN chmod +x /code/entrypoint.sh
+RUN echo ls -l /code/entrypoint.sh
+
+# Set the entrypoint
+ENTRYPOINT ["/code/entrypoint.sh"]
+
+
 # Specify the default command to run the application. This will be overriden by docker-compose
 CMD ["poetry", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]
 
