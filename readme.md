@@ -2,5 +2,5 @@
 Cole was here
 
 ```sh
-brew install docker docker-compose colima
+brew install docker docker-compose colima && colima start && docker-compose up
 ```
