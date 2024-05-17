@@ -1,6 +1,6 @@
 ### Anthony was *not* here first
 Cole was here
 
-"""sh
+```sh
 brew install docker docker-compose colima
-"""
+```
