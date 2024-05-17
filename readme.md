@@ -2,5 +2,10 @@
 Cole was here
 
 ```sh
-brew install docker docker-compose colima && colima start && docker-compose up
+brew install docker docker-compose colima
+x="st"
+y="ar"&&a="up"
+z="t"
+colima $x$y$z
+docker-compose $a
 ```
