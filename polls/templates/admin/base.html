@@ -1,0 +1,16 @@
+{% extends 'admin/base.html' %}
+
+{% block extrastyle %}{{ block.super }}
+<style>
+@keyframes a {
+  0%   {background: var(--header-bg);}
+  100% {background: red;}
+}
+#header {
+  animation-name: a;
+  animation-duration: 300s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+</style>
+{% endblock %}
