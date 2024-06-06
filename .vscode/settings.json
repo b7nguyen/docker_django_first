@@ -1,0 +1,6 @@
+{
+    // "python.testing.pytestArgs": [
+    //     "mysite"
+    // ],
+    "python.testing.pytestEnabled": true
+}
