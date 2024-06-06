@@ -48,3 +48,7 @@ pytest must be ran within container
 Issues:
 - When connecting vscode to container, "./manage test" cannot be ran. Once vscode is disconnected from container, it will work again on other CLI. 
     Fix: Switched from Colima to Docker Desktop and it is working now. 
+
+
+How to run app on both container and directly on the host machine?
+- Set an environment variable like IN_DOCKER_CONTAINER in DockerFile. Then use os.environ.get to detect it and act accordingly.  

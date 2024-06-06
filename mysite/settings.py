@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
+# Get the environment variable DJANGO_DOCKER, default to 'false' if not set
+IN_DOCKER_CONTAINER = os.getenv('IN_DOCKER_CONTAINER')
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -81,7 +84,7 @@ DATABASES = {
         'NAME': os.environ.get('POSTGRES_NAME'),
         'USER': os.environ.get('POSTGRES_USER'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': 'db',
+        'HOST': 'db' if IN_DOCKER_CONTAINER else 'localhost',
         'PORT': 5432,
     }
 }
