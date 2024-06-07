@@ -1,2 +1,4 @@
 data/
+polls/__pycache__
 **/.DS_Store
+*.pyc

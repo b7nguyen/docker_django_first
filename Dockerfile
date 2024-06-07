@@ -2,6 +2,7 @@
 FROM python:3.8.13
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+ENV IN_DOCKER_CONTAINER=true
 WORKDIR /code
 RUN pip install poetry
 COPY pyproject.toml poetry.lock /code/
