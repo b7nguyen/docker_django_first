@@ -19,10 +19,10 @@ poetry run python manage.py migrate
 # poetry run python manage.py collectstatic --noinput
 
 # Create a superuser if it doesn't exist
+echo "Creating superuser..."
 poetry run python manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'admin') if not User.objects.filter(username='admin').exists() else print('Superuser already exists')"
 
 # Start the Django server
 echo "Starting server..."
-
-# Executes the 
+# Executes the next command in the current shell process 
 exec "$@"
