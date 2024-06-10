@@ -52,3 +52,9 @@ Issues:
 
 How to run app on both container and directly on the host machine?
 - Set an environment variable like IN_DOCKER_CONTAINER in DockerFile. Then use os.environ.get to detect it and act accordingly.  
+
+Can application run on docker and host machine? Yes but...
+- If database after running host already exists, thre will be credential issues. data folder must be deleted. 
+
+
+
