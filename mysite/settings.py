@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
+# Check if the environment variable TESTING is set. This is required for the debug toolbar
+TESTING =  "test" in os.sys.argv
+
 # Load environment variables from .env file
 load_dotenv()
 
@@ -34,7 +37,6 @@ SECRET_KEY = 'django-insecure-n412gst1xl*0io7@4%0d@ky&i@=fo1=%1a8x$6cuerjach3oi&
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -57,6 +59,19 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+# If the environment variable TESTING is not set, enable the debug toolbar
+if DEBUG and not TESTING:
+    INSTALLED_APPS = [
+        *INSTALLED_APPS,
+        "debug_toolbar",
+    ]
+    MIDDLEWARE = [
+        "debug_toolbar.middleware.DebugToolbarMiddleware",
+        *MIDDLEWARE,
+    ]
+
 
 ROOT_URLCONF = 'mysite.urls'
 
@@ -130,3 +145,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Add the IP address of the host machine to the list of internal IPs
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
