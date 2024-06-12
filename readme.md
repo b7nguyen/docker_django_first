@@ -56,5 +56,8 @@ How to run app on both container and directly on the host machine?
 Can application run on docker and host machine? Yes but...
 - If database after running host already exists, thre will be credential issues. data folder must be deleted. 
 
+Can you add a Django Debug Toolbar? Yes, follow instructions here. https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
+- Also, be sure to have body tags. 
+
 
 
