@@ -1,6 +1,3 @@
-### Anthony was *not* here first
-Cole was here
-
 ## Installs:
 ```sh
 brew install docker docker-compose
@@ -57,7 +54,8 @@ Can application run on docker and host machine? Yes but...
 - If database after running host already exists, thre will be credential issues. data folder must be deleted. 
 
 Can you add a Django Debug Toolbar? Yes, follow instructions here. https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
-- Also, be sure to have body tags. 
+- Also, be sure to have body tags.
+  
 
 
 
