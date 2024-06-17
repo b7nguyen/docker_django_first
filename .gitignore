@@ -3,3 +3,4 @@ polls/__pycache__
 **/.DS_Store
 *.pyc
 __azurite_db*
+*_old
