@@ -150,3 +150,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+
+
+# Conditionally include debug toolbar urls
+def show_toolbar(request):
+    return request.headers.get('x-requested-with') != 'XMLHttpRequest'
+
+# Set the configuration for the debug toolbar. Override the default configuration
+# which checks if DEBUG is set to True and ip of request is in INTERNAL_IPS 
+DEBUG_TOOLBAR_CONFIG = {
+    'SHOW_TOOLBAR_CALLBACK': show_toolbar,
+}
